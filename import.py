@@ -31,7 +31,8 @@ def import_replays(folder):
 if __name__ == "__main__":
     if len(argv) <= 1: raise Exception("Please provide a folder with replays to parse.")
 
-    print("Feeding osu! replays.. Your osu! window will likely turn into a black screen due to the stress, don't worry.\nIf you wish to close the program at any time, you can use Ctrl + C (KeyboardInterrupt).\n")
+    print("Feeding osu! replays.. Your osu! window will likely turn into a black screen due to the stress, don't worry.",
+          "If you wish to close the program at any time, you can use Ctrl + C (KeyboardInterrupt).", "", sep='\n')
 
     start_time = time()
 
@@ -40,8 +41,8 @@ if __name__ == "__main__":
         import_replays(folder)
 
     execution_time = time() - start_time
-    
-    print("\nPress any key to exit - ", end='')
+
+    print('', "Press any key to exit - ", sep='\n', end='')
     if execution_time < 1: print("%.3fms." % (execution_time * 1000))
     else: print("%.3fs." % (time() - start_time))
     getch()

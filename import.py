@@ -16,7 +16,7 @@ def import_replays(folder):
     replays = glob(folder + "/*.osr")
     l_replays = len(replays)
 
-    print(f"Found {l_replays} replays. Beginning parse.\n")
+    print("Found " + str(l_replays) + " replays. Beginning parse.\n")
 
     for idx, replay in enumerate(replays):
         _i = 1 + idx
@@ -24,7 +24,7 @@ def import_replays(folder):
         else: system("%s '%s'" % (osu_path, replay))
 
         # Print for every 25 replays.
-        if not _i % 25: print(f"Progress {'%.2f' % (_i / l_replays * 100)}% ({_i} replays).")
+        if not _i % 25: print("Progress " + '%.2f' % (_i / l_replays * 100) + "% (" + str(_i) + " replays).")
 
     if not idx: raise Exception("Could not find any replays to import.")
 
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     start_time = time()
 
     for folder in argv[1:]:
-        print(f"Parsing folder {folder}.")
+        print("Parsing folder " + folder)
         import_replays(folder)
 
     execution_time = time() - start_time

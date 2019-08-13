@@ -13,7 +13,7 @@ def import_replays(folder):
     idx = 0
     if not _nt: osu_path = input("[Linux detected] What is the path to your osu.exe? (e.g. /home/gamer123/osu.exe)")
 
-    replays = glob(f"{argv[1]}/*.osr")
+    replays = glob(folder + "/*.osr")
     l_replays = len(replays)
 
     print(f"Found {l_replays} replays. Beginning parse.\n")
